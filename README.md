@@ -1,73 +1,152 @@
-# Welcome to your Lovable project
 
-## Project info
+# Community Resource Hub
 
-**URL**: https://lovable.dev/projects/b7c90b63-ad33-437a-8eef-247c83b205ef
+A comprehensive web application designed to solve the problem of fragmented access to local community resources such as food assistance, mental health services, housing support, legal aid, and job training.
 
-## How can I edit this code?
+## About This Project
 
-There are several ways of editing your application.
+The Community Resource Hub centralizes community resources into a single, accessible platform where users can:
 
-**Use Lovable**
+- **Search and discover** local resources by category, location, and availability
+- **Verify information** through community-driven validation
+- **Rate and review** services to help others make informed decisions
+- **Flag outdated information** to maintain data accuracy
+- **Contribute new resources** to expand the community database
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b7c90b63-ad33-437a-8eef-247c83b205ef) and start prompting.
+## User Roles
 
-Changes made via Lovable will be committed automatically to this repo.
+### Public Users
+- Browse and search all verified resources
+- View ratings and reviews
+- Access contact information and service details
 
-**Use your preferred IDE**
+### Contributors
+- All public user capabilities
+- Add new resource listings
+- Verify existing resources
+- Rate and review services
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Administrators
+- Full platform management capabilities
+- User management and role assignment
+- Content moderation and flagging review
+- Analytics and platform oversight
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Key Features
 
-Follow these steps:
+- **Advanced Search & Filtering**: Find resources by category, location (zip/city), availability, and verification status
+- **Mobile-Responsive Design**: Optimized for use on any device
+- **Community-Driven Verification**: Crowdsourced validation ensures information accuracy
+- **Rating System**: 5-star rating system with detailed reviews
+- **Real-Time Updates**: Stay informed about resource availability and changes
+- **Accessibility Focused**: Designed to be accessible to users of all technical skill levels
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Technology Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Frontend
+- React 18 with TypeScript
+- Tailwind CSS for styling
+- shadcn/ui component library
+- Vite for build tooling
+- React Router for navigation
+- Tanstack Query for data management
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Recommended Backend
+- Node.js with Express.js
+- MongoDB for data storage
+- JWT for authentication
+- Role-based access control (RBAC)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd community-resource-hub
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── types/              # TypeScript type definitions
+```
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+We welcome contributions from the community! Please feel free to:
 
-## How can I deploy this project?
+1. Report bugs and issues
+2. Suggest new features
+3. Submit pull requests
+4. Help with documentation
 
-Simply open [Lovable](https://lovable.dev/projects/b7c90b63-ad33-437a-8eef-247c83b205ef) and click on Share -> Publish.
+## Resource Categories
 
-## Can I connect a custom domain to my Lovable project?
+The platform supports various resource categories including:
 
-Yes, you can!
+- **Food Assistance**: Food banks, meal programs, SNAP assistance
+- **Mental Health**: Counseling services, support groups, crisis intervention
+- **Housing Support**: Emergency shelter, rental assistance, housing programs
+- **Legal Aid**: Free legal services, immigration help, tenant rights
+- **Job Training**: Skills development, employment services, career counseling
+- **Healthcare**: Community health centers, free clinics, medical assistance
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Data Verification
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Our community-driven approach ensures resource accuracy through:
+
+- **Contributor Verification**: Trusted community members verify new submissions
+- **Regular Updates**: Resources are regularly reviewed and updated
+- **Community Flagging**: Users can flag outdated or incorrect information
+- **Administrative Oversight**: Administrators review flagged content and manage disputes
+
+## Future Enhancements
+
+- Multi-language support
+- SMS notifications for resource updates
+- Integration with external APIs (Google Maps, government databases)
+- Mobile app development
+- Advanced analytics and reporting
+- API for third-party integrations
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Support
+
+For support, questions, or feedback, please contact the development team or create an issue in the project repository.
+
+---
+
+*Building stronger communities through accessible resource sharing.*
+```
