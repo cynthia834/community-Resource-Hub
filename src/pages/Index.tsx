@@ -12,58 +12,66 @@ const mockResources = [
   {
     id: '1',
     name: 'Downtown Food Bank',
-    category: 'food-assistance',
+    category: 'Food Assistance',
     description: 'Provides free groceries and hot meals to families in need. No documentation required, open to all community members.',
-    address: '123 Main Street, Downtown',
+    address: '123 Main Street',
+    city: 'Downtown',
+    zipCode: '12345',
     phone: '(555) 123-4567',
     website: 'https://downtownfoodbank.org',
     hours: 'Mon-Fri: 9am-5pm, Sat: 10am-2pm',
-    verified: true,
+    isVerified: true,
     rating: 4.8,
     reviewCount: 127,
-    lastVerified: '2 days ago',
+    lastUpdated: '2 days ago',
     tags: ['Free', 'No ID Required', 'Multilingual Staff']
   },
   {
     id: '2',
     name: 'Community Mental Health Center',
-    category: 'mental-health-services',
+    category: 'Mental Health',
     description: 'Comprehensive mental health services including counseling, therapy, and crisis intervention. Sliding scale fees available.',
-    address: '456 Oak Avenue, Midtown',
+    address: '456 Oak Avenue',
+    city: 'Midtown',
+    zipCode: '12346',
     phone: '(555) 987-6543',
     hours: 'Mon-Fri: 8am-6pm, Emergency: 24/7',
-    verified: true,
+    isVerified: true,
     rating: 4.6,
     reviewCount: 89,
-    lastVerified: '1 week ago',
+    lastUpdated: '1 week ago',
     tags: ['Sliding Scale', '24/7 Crisis Line', 'Multiple Languages']
   },
   {
     id: '3',
     name: 'Housing First Initiative',
-    category: 'housing-support',
+    category: 'Housing',
     description: 'Emergency housing assistance, rental support, and long-term housing placement services for individuals and families.',
-    address: '789 Pine Street, Eastside',
+    address: '789 Pine Street',
+    city: 'Eastside',
+    zipCode: '12347',
     phone: '(555) 456-7890',
     hours: 'Mon-Fri: 9am-4pm',
-    verified: false,
+    isVerified: false,
     rating: 4.2,
     reviewCount: 34,
-    lastVerified: '3 weeks ago',
+    lastUpdated: '3 weeks ago',
     tags: ['Emergency Shelter', 'Rental Assistance', 'Case Management']
   },
   {
     id: '4',
     name: 'Legal Aid Society',
-    category: 'legal-aid',
+    category: 'Legal Aid',
     description: 'Free legal services for low-income residents including housing disputes, immigration, and family law matters.',
-    address: '321 Elm Street, Westside',
+    address: '321 Elm Street',
+    city: 'Westside',
+    zipCode: '12348',
     phone: '(555) 321-0987',
     hours: 'Tue-Thu: 10am-3pm, By appointment',
-    verified: true,
+    isVerified: true,
     rating: 4.9,
     reviewCount: 156,
-    lastVerified: '5 days ago',
+    lastUpdated: '5 days ago',
     tags: ['Free Legal Aid', 'Immigration Services', 'Appointment Required']
   }
 ];
@@ -107,9 +115,9 @@ const Index = () => {
     }
     
     if (filters.verified === 'verified') {
-      filtered = filtered.filter(resource => resource.verified);
+      filtered = filtered.filter(resource => resource.isVerified);
     } else if (filters.verified === 'unverified') {
-      filtered = filtered.filter(resource => !resource.verified);
+      filtered = filtered.filter(resource => !resource.isVerified);
     }
     
     setFilteredResources(filtered);
@@ -120,10 +128,10 @@ const Index = () => {
     });
   };
 
-  const handleEdit = (id: string) => {
+  const handleVerify = (id: string) => {
     toast({
-      title: "Edit Resource",
-      description: `Opening editor for resource ${id}`,
+      title: "Resource Verified",
+      description: "Thank you for verifying this resource",
     });
   };
 
@@ -173,8 +181,8 @@ const Index = () => {
               key={resource.id}
               resource={resource}
               userRole={userRole}
-              onEdit={handleEdit}
               onFlag={handleFlag}
+              onVerify={handleVerify}
             />
           ))}
         </div>
